@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>🎵 Music</title>
+</head>
+
+<body>
+    <section class="hero" data-audio-section="sunny-fruit">
+        <div class="wrapper">
+            <div class="music-button" data-music-button="">
+                <svg class="play" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                    class="bi bi-play-fill" viewBox="0 0 16 16">
+                    <path
+                        d="m11.596 8.697-6.363 3.692c-.54.313-1.233-.066-1.233-.697V4.308c0-.63.692-1.01 1.233-.696l6.363 3.692a.802.802 0 0 1 0 1.393z" />
+                </svg>
+                <svg class="pause" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                    class="bi bi-pause-fill" viewBox="0 0 16 16">
+                    <path
+                        d="M5.5 3.5A1.5 1.5 0 0 1 7 5v6a1.5 1.5 0 0 1-3 0V5a1.5 1.5 0 0 1 1.5-1.5zm5 0A1.5 1.5 0 0 1 12 5v6a1.5 1.5 0 0 1-3 0V5a1.5 1.5 0 0 1 1.5-1.5z" />
+                </svg>
+            </div>
+            <p>(Click, click, click 🎵)</p>
+        </div>
+        <div class="visualizer"></div>
+    </section>
+    <section class="artist artist--1" data-audio-section="sunny-fruit">
+        <div class="artist__img">
+            <img src="./img/img-1.jpg" alt="">
+        </div>
+        <div class="artist__desc">
+            <h3>Sunny Fruit</h3>
+            <p>Sunny Fruit is a composing and production project that effortlessly moves between genres and styles,
+                making the
+                music sound experimental and interesting. His works range from peaceful romantic instrumentals all the
+                way to
+                modern EDM music, with some soul, funk and chill-hop in between. The main idea of the project is to make
+                music
+                that's enjoyable even after 1000 years.</p>
+        </div>
+    </section>
+    <section class="artist artist--2" data-audio-section="dancing-fever">
+        <div class="artist__img">
+            <img src="./img/img-2.jpg" alt="">
+        </div>
+        <div class="artist__desc">
+            <h3>Jurgen Brischar</h3>
+            <p>Jurgen Brischar is a producer and multi-instrumentalist from southern Germany. His music merges Rock with
+                Electronic and Orchestral music, resulting in energetic sounds and positive vibes. His work has been
+                featured in
+                several commercials and TV shows around the world.</p>
+        </div>
+    </section>
+    <section class="artist artist--3" data-audio-section="daboomjiggle">
+        <div class="artist__img">
+            <img src="./img/img-3.jpg" alt="">
+        </div>
+        <div class="artist__desc">
+            <h3>Out of Flux</h3>
+            <p>Playing with the differences and similarities between future beats and lofi, Out of Flux combines the
+                impact of
+                modern chord progressions with organic percussion to create a contemporary, immersive and cinematic
+                atmosphere.
+            </p>
+        </div>
+    </section>
+    <section class="resources" data-audio-section="daboomjiggle">
+        <div class="resources__container">
+            <ul>
+                <li>
+                    <a href="https://artlist.io/royalty-free-music" target="_blank">Artlist</a>
+                </li>
+                <li>
+                    <a href="https://gsap.com/" target="_blank">GSAP</a>
+                </li>
+            </ul>
+        </div>
+        <div class="visualizer"></div>
+    </section>
+
+    <div class="audios">
+        <audio loop data-audio-section="sunny-fruit">
+            <source src="./music/Sunny Fruit - Beat Blitz.mp3" type="audio/mpeg" />
+        </audio>
+        <audio loop data-audio-section="daboomjiggle">
+            <source src="./music/Out of Flux - DABOOMJIGGLE.mp3" type="audio/mpeg" />
+        </audio>
+        <audio loop data-audio-section="dancing-fever">
+            <source src="./music/Jürgen Brischar - Dancing Fever.mp3" type="audio/mpeg" />
+        </audio>
+    </div>
+
+    <div class="fixed-btn">
+        <div class="music-button sm" data-music-button="">
+            <svg class="play" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                class="bi bi-play-fill" viewBox="0 0 16 16">
+                <path
+                    d="m11.596 8.697-6.363 3.692c-.54.313-1.233-.066-1.233-.697V4.308c0-.63.692-1.01 1.233-.696l6.363 3.692a.802.802 0 0 1 0 1.393z" />
+            </svg>
+            <svg class="pause" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                class="bi bi-pause-fill" viewBox="0 0 16 16">
+                <path
+                    d="M5.5 3.5A1.5 1.5 0 0 1 7 5v6a1.5 1.5 0 0 1-3 0V5a1.5 1.5 0 0 1 1.5-1.5zm5 0A1.5 1.5 0 0 1 12 5v6a1.5 1.5 0 0 1-3 0V5a1.5 1.5 0 0 1 1.5-1.5z" />
+            </svg>
+        </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="/main.js"></script>
+</body>
+
+</html>

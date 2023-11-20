@@ -1,0 +1,250 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+}
+
+:root {
+  --ease: ease-in-out;
+  --dur: 0.2s;
+  --bg-play-color: #EF5F98;
+  --bg-pause-color: #8975AB;
+  --b-play-shadow: 0px 7px 24px 0px rgba(241, 113, 163, 0.47);
+  --b-pause-shadow: 0px 7px 24px 0px rgba(137, 117, 171, 0.35);
+}
+
+/* Music Button */
+.music-button {
+  cursor: pointer;
+  position: relative;
+  --size: clamp(12.8rem, calc(12.8rem + ((1vw - 0.48rem) * 5)), 20rem);
+
+  height: var(--size);
+  width: var(--size);
+  background-color: var(--bg-play-color);
+  border-radius: var(--size);
+  box-shadow: var(--b-play-shadow);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color var(--dur) var(--ease),
+    box-shadow var(--dur) var(--ease);
+}
+
+.music-button:hover {
+  --bg-pause-color: #6E5E89;
+  --bg-play-color: #C15A82;
+}
+
+.music-button[data-sv-sound="on"] {
+  background-color: var(--bg-pause-color);
+  box-shadow: var(--b-pause-shadow);
+}
+
+.music-button svg {
+  fill: #fff;
+  height: clamp(4.8rem, calc(4.8rem + ((1vw - 0.48rem) * 2.9167)), 9rem);
+  width: auto;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(1);
+  opacity: 1;
+  visibility: visible;
+  transition: opacity var(--dur) var(--ease), visibility var(--dur) var(--ease),
+    transform var(--dur) var(--ease);
+}
+
+.music-button svg.play {
+  transform: translate(-45%, -50%) scale(1);
+}
+
+.music-button svg.pause {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.music-button[data-sv-sound="on"] .pause {
+  transform: translate(-50%, -50%) scale(1);
+  opacity: 1;
+  visibility: visible;
+}
+
+.music-button[data-sv-sound="off"] .pause {
+  transform: translate(-50%, -50%) scale(0);
+  opacity: 0;
+  visibility: hidden;
+}
+
+.music-button[data-sv-sound="off"] .play {
+  transform: translate(-45%, -50%) scale(1);
+  opacity: 1;
+  visibility: visible;
+}
+
+.music-button[data-sv-sound="on"] .play {
+  transform: translate(-45%, -50%) scale(0);
+  opacity: 0;
+  visibility: hidden;
+}
+
+/* Hero */
+.hero {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero .wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2.4rem;
+}
+
+.hero .wrapper p {
+  font-size: 1.2rem;
+}
+
+/* Artist */
+.artist {
+  display: flex;
+  align-items: center;
+  min-height: 80vh;
+}
+
+.artist--1 {
+  background-color: #049a7d0f;
+}
+
+.artist--2 {
+  background-color: #3321211a;
+}
+
+.artist--3 {
+  background-color: #fe3a440a;
+}
+
+.artist .artist__img {
+  aspect-ratio: 1/1;
+  width: 100%;
+  height: 100%;
+  max-height: 70rem;
+  max-width: 50%;
+}
+
+.artist:nth-child(odd) .artist__img {
+  order: 1;
+}
+
+.artist .artist__img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.artist .artist__desc {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: center;
+  gap: 2rem;
+  padding: 64px;
+  max-width: 50%;
+}
+
+.artist .artist__desc h3 {
+  font-size: clamp(2.4rem, calc(2.4rem + ((1vw - 0.48rem) * 1.1111)), 4rem);
+}
+
+.artist .artist__desc p {
+  font-size: clamp(1.6rem, calc(1.6rem + ((1vw - 0.48rem) * 0.2778)), 2rem);
+  line-height: 145%;
+}
+
+@media only screen and (max-width: 991px) {
+  .artist {
+    flex-direction: column;
+  }
+
+  .artist .artist__img,
+  .artist .artist__desc {
+    max-width: 100%;
+  }
+
+  .artist .artist__desc {
+    padding: 32px 24px;
+  }
+
+  .artist:nth-child(odd) .artist__img {
+    order: -1;
+  }
+}
+
+/* Resources */
+.resources {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 1.6rem;
+  padding-top: 4.8rem;
+  padding-bottom: 1.6rem;
+}
+
+.resources h4 {
+  font-size: 3.2rem;
+  margin-bottom: 2rem;
+}
+
+.resources a {
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1rem;
+  text-decoration: none;
+  font-weight: 600;
+  color: var(--bg-play-color);
+  transition: color var(--dur) var(--ease);
+}
+
+.resources a:hover {
+  --bg-play-color: #47287C;
+}
+
+.resources ul {
+  list-style-type: none;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 3.2rem;
+}
+
+.audios {
+  display: none;
+}
+
+.fixed-btn {
+  position: fixed;
+   bottom: 16px;
+   left: 16px;
+}
+
+.fixed-btn .music-button.sm {
+  opacity: 0;
+  visibility: hidden;
+  --size: 4.8rem;
+}
+
+.fixed-btn .music-button.sm svg {
+  height: 2.4rem;
+}
